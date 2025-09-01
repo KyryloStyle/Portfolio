@@ -1,0 +1,313 @@
+body{
+    font-family: "Sora", sans-serif;
+
+
+}
+
+.about{
+    background: url("img/back-dark.jpg") no-repeat center center fixed;
+    background-size: cover; /* растянуть под экран */
+    height:100vh ;
+    color: white;
+     position: relative;
+    overflow: hidden;
+}
+
+.about .first-row{
+    font-weight: 700;
+}
+
+.about .second-row{
+    font-weight: 600;
+    padding-left: 30vh;
+    margin-top: -1vh;
+    color: #2a6aca;
+}
+
+.about #aboutText{
+    margin-top: 10vh;
+    margin-left: 0vh;
+    text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+}
+.about #aboutText h1{
+    font-size: 8vh;
+}
+
+
+/* Обертка для прозрачного квадрата с текстом */
+/* прозрачный блок с текстом */
+.text {
+    position: absolute;       /* привязываем к родителю #aboutText */
+    top: 35vh;                /* снизу под "Web Developer" */
+    left: 25vh;                  /* левый край */
+    width: 35%;              /* на всю ширину родителя */
+    
+    padding: 1vh 2vh;
+    border-radius: 10px;
+    text-align: left;         /* текст по левому краю */
+    box-sizing: border-box;
+    line-height: 5vh;
+    
+}
+
+/* текст внутри блока */
+.text p {
+    margin: 2vh 0;
+    color: white;
+    font-size: 3vh;
+    font-weight: 500;
+    line-height: 4vh;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.about .contact {
+  display: flex;            /* расположить в строку */
+  flex-direction: column;   /* если хочешь одну под другой */
+  gap: 1.5vh;               /* расстояние между контактами */
+  margin-top: 5vh;
+  
+}
+
+.about .contact-item {
+  display: flex;            /* иконка + текст в ряд */
+  align-items: center;      /* выравнивание по центру */
+  gap: 1vh;                 /* расстояние между иконкой и текстом */
+}
+
+.about .contact img {
+  width: 3vh;
+  height: 3vh;
+}
+
+.about .contact p {
+  margin: 0;
+  font-size: 2.2vh;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+
+
+.col-5{
+  padding-right: 0;
+}
+
+.img-wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  height: 100vh; /* фиксированная высота */
+}
+
+.img-wrapper img {
+  display: block;
+  height: 100%; /* картинка занимает всю высоту контейнера */
+  width: auto;
+}
+
+/* тень только снизу */
+.img-wrapper .img-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%; /* только нижняя часть изображения */
+  background: linear-gradient(to top, rgba(0,0,0,1), transparent 100%);
+  pointer-events: none;
+}
+
+
+.skillset{
+  background: #000000;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(13, 33, 61, 1) 100%);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.skillset .container{
+  max-width: 90%;
+  margin-bottom: 3vh;
+  background: #214c91;
+  background: linear-gradient(180deg, rgba(33, 76, 145, 1) 0%, rgba(38, 95, 181, 1) 100%);
+  border-radius: 6vh;
+  color: white;
+  padding: 7vh;
+  padding-left: 16vh;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.4),
+              inset 0 0 60px rgba(0, 0, 0, 0.2);
+}
+
+.skillset .row {
+  text-align: left; /* чтобы текст не был по центру */
+}
+
+
+.skillset h1{
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 6vh;
+}
+
+.skillset p{
+  font-size: large;
+}
+
+.skillset ul{
+  line-height: 5vh;
+  font-size: large;
+}
+
+.interests {
+  display: flex;
+  position: relative; /* для псевдоэлемента */
+}
+
+.interests::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 35%; /* линия по центру */
+  width: 2px; /* толщина линии */
+  background: rgba(255, 255, 255, 0.481); /* тонкая белая */
+  transform: translateX(-50%); /* ровно по центру */
+}
+
+.interest-col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.interest-col p {
+  margin-bottom: 2vh;
+  color: white;
+  font-weight: 500;
+}
+
+/* можно добавить отступ для второй колонки от линии */
+.interest-col.second-col {
+  padding-left: 0px;
+}
+
+
+@media (max-width: 1199px) {
+
+}
+
+
+@media (max-width: 767px) {
+
+  /* Колонки на всю ширину */
+  .col-7, .col-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  /* Заголовки */
+  .about #aboutText {
+    margin-top: 5vh;
+    text-align: center;
+  }
+
+  .about #aboutText h1 {
+    font-size: 4vh;
+    padding-left: 0;
+  }
+
+  .about .second-row {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  /* Текст */
+  .text {
+    position: static;
+    width: 100%;
+    margin-top: 3vh;
+    padding: 0 2vh;
+    text-align: center;
+  }
+
+  .text p {
+    font-size: 2.2vh;
+    line-height: 3vh;
+  }
+  
+  /* Контакты */
+  .about .contact {
+    align-items: center;
+  }
+  .about .contact-item {
+    justify-content: center;
+  }
+
+  /* Фото на всю ширину */
+  .img-wrapper {
+    position: relative; 
+    width: 100%;
+    height: auto;       
+    margin: 0 0 4vh 0; /* убираем лишний верхний отступ, оставляем отступ снизу */
+    text-align: center;
+  }
+
+  .img-wrapper img {
+    width: auto;       /* сохраняем пропорции */
+    max-width: 90%;    /* чтобы не вылезало за экран */
+    height: auto;
+    display: block;
+    margin: 0 auto;    /* центрируем */
+  }
+
+  /* Тень */
+  .img-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    pointer-events: none;
+  }
+
+
+
+  /* Skillset */
+  .skillset .container {
+    padding: 4vh 2vh;
+    border-radius: 3vh;
+    margin-top: 2vh;
+  }
+
+  .skillset .row {
+    flex-direction: column;
+    align-items: center;  
+  }
+
+  .skillset h1, .skillset p {
+    text-align: center;
+  }
+
+  /* Интересы */
+  .interests {
+    flex-direction: column;
+  }
+  .interests::before {
+    display: none;
+  }
+  .interest-col {
+    padding: 0;
+    text-align: center;
+  }
+  .interest-col p {
+    margin-bottom: 1.5vh;
+  }
+
+}
