@@ -28,14 +28,16 @@
                         <p style="margin-top: 5vh ;">My goal: To challenge myself in a dynamic environment, improve my skills through projects, and contribute effectively to a team.</p>
                     
                         <div class="contact">
-                            <div class="contact-item">
+                            <div class="contact-item" onclick="copyToClipboard('kyrylo.yurchenkoo@gmail.com')">
                                 <img alt="my gmail" src="img/google.png">
-                                <p>kyrylo.yurchenkoo@gmail.com</p>
+                                <a href="mailto:kyrylo.yurchenkoo@gmail.com"><p>kyrylo.yurchenkoo@gmail.com</p></a>
                             </div>
-                            <div class="contact-item">
+                            <div class="contact-item" onclick="copyToClipboard('+4915144245046')">
                                 <img alt="my phone number" src="img/call.png">
                                 <p>+49 151 4424 5046</p>
                             </div>
+
+                            <div class="notification" id="notification">Copied!</div>
                         </div>
                     
                     </div>
@@ -113,8 +115,8 @@
                     
                 </div>
                 <div class="interest-col second-col">
-                    <p>Ukranian</p>
-                    <p>Russian </p>
+                    <p>Ukranian (Native)</p>
+                    <p>Russian (C2)</p>
                 </div>
                 </div>
             </div>

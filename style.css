@@ -72,11 +72,47 @@ body{
   display: flex;            /* иконка + текст в ряд */
   align-items: center;      /* выравнивание по центру */
   gap: 1vh;                 /* расстояние между иконкой и текстом */
+  cursor: pointer;
+
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.2vh;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
 }
 
 .about .contact img {
   width: 3vh;
   height: 3vh;
+}
+
+.notification {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #48a526;
+    color: white;
+    width: 80%; /* занимает почти всю ширину экрана */
+    max-width: 300px; /* ограничение для больших экранов */
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 9999; /* чтобы было поверх всего */
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .about .contact p {
@@ -195,6 +231,63 @@ body{
 
 @media (max-width: 1199px) {
 
+  /* Колонки About */
+  .about .container-fluid .row {
+    flex-direction: row; /* оставить горизонтально, но уменьшить padding */
+    align-items: center;
+  }
+
+  #aboutText {
+    margin-top: 5vh;
+    text-align: left;
+  }
+
+  .about #aboutText h1 {
+    font-size: 6vh; /* чуть меньше, чем на больших экранах */
+  }
+
+  .about .second-row {
+    padding-left: 15vh; /* уменьшить отступ слева */
+  }
+
+  .text {
+    top: 30vh; /* чуть выше */
+    left: 20vh;
+    width: 40%;
+    line-height: 4.5vh;
+  }
+
+  .text p {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+  }
+
+  /* Контакты */
+  .about .contact {
+    margin-top: 4vh;
+    gap: 1vh;
+  }
+
+  .about .contact-item img {
+    width: 2.5vh;
+    height: 2.5vh;
+  }
+
+  /* Картинка */
+  .img-wrapper {
+    width: 45%;
+    height: auto;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
 }
 
 
@@ -206,13 +299,29 @@ body{
     max-width: 100% !important;
   }
 
-  .row {
-    flex-direction: column;
+  .about {
+    background-image: none;
+    background: #000000;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 17, 43, 1) 100%);
+    height: auto; /* не фиксируем 100vh */
+    padding: 3vh 0;
   }
 
+  .about .container-fluid {
+    display: flex;
+    flex-direction: column; /* сначала картинка, потом текст */
+    align-items: center;
+  }
+
+    .row {
+    flex-direction: column-reverse; /* сначала картинка, потом текст */
+  }
+
+
+
   /* Заголовки */
-  .about #aboutText {
-    margin-top: 5vh;
+  #aboutText {
+    margin-top: 3vh;
     text-align: center;
   }
 
@@ -230,7 +339,7 @@ body{
   .text {
     position: static;
     width: 100%;
-    margin-top: 3vh;
+    margin-top: 2vh;
     padding: 0 2vh;
     text-align: center;
   }
@@ -250,19 +359,20 @@ body{
 
   /* Фото на всю ширину */
   .img-wrapper {
-    position: relative; 
+    position: relative;  /* убрать absolute */
     width: 100%;
-    height: auto;       
-    margin: 0 0 4vh 0; /* убираем лишний верхний отступ, оставляем отступ снизу */
-    text-align: center;
+    height: auto;
+    margin-bottom: -52%;
+    margin-top: 50%;
   }
 
   .img-wrapper img {
-    width: auto;       /* сохраняем пропорции */
-    max-width: 90%;    /* чтобы не вылезало за экран */
+    width: 100%;
     height: auto;
+    max-height: 60vh;
     display: block;
-    margin: 0 auto;    /* центрируем */
+    object-fit: contain;
+    margin: 0 auto;
   }
 
   /* Тень */
@@ -283,7 +393,7 @@ body{
   .skillset .container {
     padding: 4vh 2vh;
     border-radius: 3vh;
-    margin-top: 2vh;
+    margin-top: 0vh;
   }
 
   .skillset .row {
@@ -309,5 +419,12 @@ body{
   .interest-col p {
     margin-bottom: 1.5vh;
   }
+
+  .notification {
+        bottom: 3%;
+        width: 90%;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
 
 }
