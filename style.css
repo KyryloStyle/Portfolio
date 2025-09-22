@@ -131,7 +131,7 @@ body{
 .img-wrapper {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   width: auto;
   height: 100vh; /* фиксированная высота */
@@ -139,7 +139,7 @@ body{
 
 .img-wrapper img {
   display: block;
-  height: 100%; /* картинка занимает всю высоту контейнера */
+  height: 80%; /* картинка занимает всю высоту контейнера */
   width: auto;
 }
 
