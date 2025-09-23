@@ -227,4 +227,11 @@ a { color: inherit; text-decoration: none; }
   .hero-text h1 { font-size: 2.2rem; }
   .hero-text h2 { font-size: 1.5rem; }
   .hero-img img { max-height: 40vh; margin-top: 2rem; }
+
+  .logo{
+    display: none;
+  }
+
 }
+
+
