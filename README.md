@@ -24,7 +24,7 @@ This portfolio website is designed to demonstrate my frontend development skills
    - [GitHub Repository](https://github.com/kyrylostyle/Translater)
 
 2. **Dance Event Website (BANKA FUNKA JAM)**  
-   - Modern dance event landing page with lineup, tickets, registration, QR codes.  
+   - Modern dance event landing page with lineup, tickets.
    - [Live Demo](https://kyrylostyle.github.io/BankaFunka/)  
 
 ## Technologies Used
