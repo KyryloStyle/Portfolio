@@ -228,10 +228,25 @@ a { color: inherit; text-decoration: none; }
   .hero-text h2 { font-size: 1.5rem; }
   .hero-img img { max-height: 40vh; margin-top: 2rem; }
 
-  .logo{
-    display: none;
+  .nav {
+    display: flex;
+    justify-content: center;   /* Центрируем */
+    align-items: center;
+    width: 100%;
+    padding: 0;
   }
 
+  .menu {
+    display: flex;
+    justify-content: flex-start;   /* Чтобы список был по центру */
+    flex: 0 1 auto;            /* Убираем растяжение */
+    gap: 1.5rem;               /* Расстояние между пунктами */
+    padding: 0;
+  }
+
+  .logo {
+    display: none;             /* Скрываем лого */
+  }
 }
 
 
