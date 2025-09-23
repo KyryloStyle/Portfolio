@@ -23,12 +23,12 @@ const cards = document.querySelectorAll('.project-card');
 
 cards.forEach(card => {
   card.addEventListener('click', (e) => {
-    // Если кликнули именно на ссылку внутри карточки, не открываем data-url
+    
     if (e.target.tagName.toLowerCase() === 'a') return;
 
     const url = card.getAttribute('data-url'); 
     if (url) {
-      window.open(url, '_blank'); // открывает проект в новой вкладке
+      window.open(url, '_blank'); 
     }
   });
 });
